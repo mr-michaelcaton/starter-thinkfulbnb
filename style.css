@@ -31,7 +31,8 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  padding: 10px;
 }
 
 /* ---  Groups & Items --- */
@@ -48,6 +49,25 @@ main img {
 
 .item-double {
   flex: 2;
+  margin: 15px;
+}
+
+.horizontal-group{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.stretch {
+  align-items:stretch;
 }
 
 /* -------  Navigation ------- */
@@ -74,15 +94,11 @@ header nav ul li a {
   padding: 0 20px 0 0;
 }
 
-header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
-}
-
 /* -------  Search Form ------- */
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  flex-direction: column;
 }
 
 form label {
@@ -117,3 +133,65 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 600px){
+
+
+/* ---  Groups & Items --- */
+.group {
+  display: flex;
+  flex-direction: row;
+}
+
+form > .horizontal-group{
+  flex-direction: column;
+  padding: 10px;
+}
+
+nav > .horizontal-group{
+  flex-direction: row;
+  padding: 10px;
+}
+
+/* -------  Navigation ------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+header nav ul li a:hover {
+  color: #bdbdbd
+}
+
+/* -------  Search Form ------- */
+form {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+form button {
+  width: 200px;
+}
+
+}
+
+@media all and (max-width: 990px) and (min-width:600px){
+  form {
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content:center;
+  }
+
+  form > .horizontal-group{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
