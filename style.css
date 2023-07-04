@@ -40,6 +40,13 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.item, .item-double{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .item {
@@ -49,7 +56,8 @@ main img {
 
 .item-double {
   flex: 2;
-  margin: 15px;
+  margin: 10px;
+
 }
 
 .horizontal-group{
@@ -70,6 +78,10 @@ main img {
   align-items:stretch;
 }
 
+.set-width{
+  width: 200px;
+}
+
 /* -------  Navigation ------- */
 
 header {
@@ -80,7 +92,7 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 52px;
   color: #fff;
 }
 
@@ -92,6 +104,7 @@ header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
+  font-size: 18px;
 }
 
 /* -------  Search Form ------- */
@@ -115,7 +128,7 @@ form button {
   background-color: #ff385c;
   border: none;
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
   padding: 15px;
   width: 100%;
 }
@@ -134,8 +147,30 @@ footer p {
 
 /* -------  Media Query ------- */
 
-@media all and (min-width: 600px){
+@media all and (min-width: 480px){
 
+   /* -------  Navigation ------- */
+
+header {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+header nav ul li a:hover {
+  color: #bdbdbd
+}
+nav > .horizontal-group{
+  flex-direction: row;
+  padding: 10px;
+}
+
+.logo{
+  display:flex;
+  flex-direction: column;
+  font-size: 36px;
+  justify-content: center;
+}
 
 /* ---  Groups & Items --- */
 .group {
@@ -148,50 +183,78 @@ form > .horizontal-group{
   padding: 10px;
 }
 
-nav > .horizontal-group{
-  flex-direction: row;
-  padding: 10px;
-}
-
-/* -------  Navigation ------- */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-header nav ul li a:hover {
-  color: #bdbdbd
-}
 
 /* -------  Search Form ------- */
 form {
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+ justify-content: space-between;
 }
 
 form button {
   width: 200px;
+  font-size: 18px;
 }
 
 }
 
-@media all and (max-width: 990px) and (min-width:600px){
+@media all and (max-width: 800px) and (min-width:480px){
   form {
     display:flex;
     flex-direction: column;
     padding: 10px;
-    justify-content:center;
   }
 
   form > .horizontal-group{
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   form button {
     width: 100%;
+  }
+}
+
+@media all and (max-width: 350px){
+  .logo {
+  font-size: 15vw;
+  }
+
+
+  form > .horizontal-group{
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .set-width{
+    width:auto;
+  }
+
+  header nav ul li a {
+    font-size: 5.2vw;
+  }
+
+  form button {
+    font-size: 5.0vw;
+  }
+
+  h2{
+    font-size: 7.4vw;
+  }
+
+  .horizontal-group{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  label, p, ul li{
+    font-size: 5.5vw;
+  }
+}
+
+@media all and (min-width: 800px){
+  .set-width{
+    width:auto;
   }
 }
