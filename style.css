@@ -46,23 +46,21 @@ main img {
   display:flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 0px 20px 0;
 }
 
 .item {
   flex: 1;
-  margin: 10px;
 }
 
 .item-double {
   flex: 2;
-  margin: 10px;
-
 }
 
 .horizontal-group{
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  margin: 10px 10px 20px 10px;
 }
 
 .center {
@@ -78,21 +76,33 @@ main img {
 }
 
 .set-width{
-  width: 200px;
+  width: 60%;
 }
 
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
-  text-align: center;
 }
 
 .logo {
+
   font-family: "Pangolin", cursive;
-  font-size: 52px;
+  font-size: 18vw;
+  text-align: center;
+  padding: 20px 20px 0px 20px;
   color: #fff;
+}
+
+nav {
+  padding:0px 60px 5px 60px;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 0px;
 }
 
 header nav ul li {
@@ -100,10 +110,10 @@ header nav ul li {
 }
 
 header nav ul li a {
+  flex:1;
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
-  font-size: 18px;
+  font-size: 5.0vw;
 }
 
 /* -------  Search Form ------- */
@@ -115,12 +125,11 @@ form {
 
 form label {
   font-weight: bold;
+  overflow: hidden;
 }
 
-form select,
-form input {
-  margin-bottom: 20px;
-  width: 180px;
+.search-button{
+  flex:1;
 }
 
 form button {
@@ -130,6 +139,7 @@ form button {
   font-size: 18px;
   padding: 15px;
   width: 100%;
+  overflow: hidden;
 }
 
 /* -------  Footer ------- */
@@ -148,6 +158,17 @@ footer p {
 
 @media all and (min-width: 480px){
 
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+
+  p, li {
+    font-size: 12px;
+  }
+
    /* -------  Navigation ------- */
 
 header {
@@ -156,12 +177,29 @@ header {
   justify-content: space-between;
 }
 
+nav {
+  flex:1;
+  padding: 0;
+  justify-content: center;
+}
+
 header nav ul li a:hover {
   color: #bdbdbd
 }
-nav > .horizontal-group{
-  flex-direction: row;
-  padding: 10px;
+
+header nav ul{
+justify-content: right;
+}
+
+header nav ul li a{
+  margin-right: 10px;
+  font-size: 14px;
+  }
+
+.horizontal-group{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 0px 10px;
 }
 
 .logo{
@@ -169,6 +207,7 @@ nav > .horizontal-group{
   flex-direction: column;
   font-size: 36px;
   justify-content: center;
+  padding: 0 0 0 5px;
 }
 
 /* ---  Groups & Items --- */
@@ -177,9 +216,8 @@ nav > .horizontal-group{
   flex-direction: row;
 }
 
-form > .horizontal-group{
-  flex-direction: column;
-  padding: 10px;
+.item, .item-double{
+  margin: 0 20px 0 0;
 }
 
 
@@ -188,72 +226,46 @@ form {
   display:flex;
   flex-direction: row;
  justify-content: space-between;
+ overflow: hidden;
+}
+
+form label {
+justify-items: center;
+}
+
+form label, form input{
+  font-size: 14px;
 }
 
 form button {
-  width: 200px;
   font-size: 18px;
+  text-align: center;
+  width: 100%;
 }
 
+.set-width {
+  width:100%;
+  flex:1;
 }
 
-@media all and (max-width: 800px) and (min-width:480px){
-  form {
-    display:flex;
-    flex-direction: column;
-    padding: 10px;
-  }
+form > .item {
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  margin: 0 6vw 0 0px
+}
 
-  form > .horizontal-group{
-    flex-direction: row;
-    justify-content: space-between;
-  }
+#datepicker{
+  width:100%;
+}
+}
 
+@media all and (max-width:225px){
   form button {
-    width: 100%;
-  }
-}
-
-@media all and (max-width: 350px){
-  .logo {
-  font-size: 15vw;
+    font-size: 8.0vw;
   }
 
-
-  form > .horizontal-group{
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  .set-width{
-    width:auto;
-  }
-
-  header nav ul li a {
-    font-size: 5.2vw;
-  }
-
-  form button {
-    font-size: 5.0vw;
-  }
-
-  h2{
-    font-size: 7.4vw;
-  }
-
-  .horizontal-group{
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-  }
-
-  label, p, ul li{
-    font-size: 5.5vw;
-  }
-}
-
-@media all and (min-width: 800px){
-  .set-width{
-    width:auto;
+  h2 {
+    overflow: hidden;
   }
 }
